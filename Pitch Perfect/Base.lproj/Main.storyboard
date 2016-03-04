@@ -18,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9K-lo-jwm">
-                                <rect key="frame" x="226" y="145" width="148" height="164"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="3XX-L9-nsX"/>
-                                    <constraint firstAttribute="height" constant="164" id="3cz-xb-2RI"/>
-                                </constraints>
-                                <state key="normal" image="microphone2x-iphone.png"/>
-                                <connections>
-                                    <action selector="recordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5u-cn-2hC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqN-u9-B78">
                                 <rect key="frame" x="250" y="409" width="100" height="100"/>
                                 <constraints>
@@ -40,19 +29,36 @@
                                     <action selector="stopButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tbe-6g-5Mj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-n2-EzO">
-                                <rect key="frame" x="221" y="317" width="153" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-n2-EzO">
+                                <rect key="frame" x="224" y="317" width="153" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="OZp-8S-QEe"/>
+                                    <constraint firstAttribute="height" constant="34" id="r86-km-hog"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.18912208709531245" blue="0.67803092277486909" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9K-lo-jwm">
+                                <rect key="frame" x="226" y="145" width="148" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="3XX-L9-nsX"/>
+                                    <constraint firstAttribute="height" constant="164" id="3cz-xb-2RI"/>
+                                </constraints>
+                                <state key="normal" image="microphone2x-iphone.png"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5u-cn-2hC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87313890706806285" green="0.87313890706806285" blue="0.87313890706806285" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JqN-u9-B78" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50y-j2-00o"/>
                             <constraint firstItem="JqN-u9-B78" firstAttribute="top" secondItem="U9K-lo-jwm" secondAttribute="bottom" constant="100" id="FLV-W0-lCu"/>
+                            <constraint firstItem="tWy-n2-EzO" firstAttribute="top" secondItem="U9K-lo-jwm" secondAttribute="bottom" constant="8" id="JI9-ff-Z0M"/>
                             <constraint firstItem="U9K-lo-jwm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="O3F-0t-ZA5"/>
                             <constraint firstItem="U9K-lo-jwm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ehU-aX-E0o"/>
+                            <constraint firstItem="tWy-n2-EzO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rWF-eA-kTU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="vrs-St-klh"/>
@@ -89,18 +95,8 @@
                                     <action selector="snailPlayAudio:" destination="HRk-VM-gcY" eventType="touchUpInside" id="QxF-HM-Kel"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ6-i5-V5u">
-                                <rect key="frame" x="41" y="288" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="e1T-ki-teM"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="chipmunk2x-iphone.png"/>
-                                <connections>
-                                    <action selector="chipMunkPlayAudio:" destination="HRk-VM-gcY" eventType="touchUpInside" id="wYM-Vv-WuK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-9a-WFZ">
-                                <rect key="frame" x="190" y="112" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-9a-WFZ">
+                                <rect key="frame" x="459" y="112" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="gbh-Vh-n6S"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="rPI-xc-p99"/>
@@ -116,26 +112,52 @@
                                     <action selector="rabbitPlayAudio:" destination="HRk-VM-gcY" eventType="touchUpInside" id="f7m-Uo-eYg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0I-91-d89">
-                                <rect key="frame" x="196" y="296" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0I-91-d89">
+                                <rect key="frame" x="459" y="268" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BXb-xn-Dq7"/>
+                                    <constraint firstAttribute="width" constant="100" id="V8m-Gi-B3g"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="darthvader2x-iphone.png"/>
                                 <connections>
                                     <action selector="darthVaderPlayAudio:" destination="HRk-VM-gcY" eventType="touchUpInside" id="AXa-xo-cOE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDB-KA-Hga">
-                                <rect key="frame" x="107" y="456" width="92" height="97"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDB-KA-Hga">
+                                <rect key="frame" x="254" y="455" width="92" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="gze-5C-WkK"/>
+                                    <constraint firstAttribute="height" constant="97" id="p2h-WQ-gIH"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="stop2x-iphone.png"/>
                                 <connections>
                                     <action selector="stopButtonPressed:" destination="HRk-VM-gcY" eventType="touchUpInside" id="XRj-uR-kJq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ6-i5-V5u">
+                                <rect key="frame" x="41" y="268" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="IcD-nT-Quo"/>
+                                    <constraint firstAttribute="height" constant="100" id="e1T-ki-teM"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="chipmunk2x-iphone.png"/>
+                                <connections>
+                                    <action selector="chipMunkPlayAudio:" destination="HRk-VM-gcY" eventType="touchUpInside" id="wYM-Vv-WuK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="H0I-91-d89" firstAttribute="top" secondItem="tIT-9a-WFZ" secondAttribute="bottom" constant="56" id="9rt-0J-hEX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tIT-9a-WFZ" secondAttribute="trailing" constant="21" id="DH8-UW-sPr"/>
+                            <constraint firstItem="EQ6-i5-V5u" firstAttribute="leading" secondItem="LN7-C4-WyI" secondAttribute="leadingMargin" constant="21" id="DeP-yz-I4a"/>
+                            <constraint firstItem="LDB-KA-Hga" firstAttribute="centerX" secondItem="LN7-C4-WyI" secondAttribute="centerX" id="Hu3-AW-0Aa"/>
                             <constraint firstItem="aTD-Oo-IaR" firstAttribute="top" secondItem="yM0-9L-l9l" secondAttribute="bottom" constant="48" id="cW6-3d-PVe"/>
                             <constraint firstItem="tIT-9a-WFZ" firstAttribute="top" secondItem="yM0-9L-l9l" secondAttribute="bottom" constant="48" id="cpF-bZ-WMC"/>
                             <constraint firstItem="aTD-Oo-IaR" firstAttribute="leading" secondItem="LN7-C4-WyI" secondAttribute="leadingMargin" constant="21" id="gfA-ah-cmc"/>
+                            <constraint firstItem="3J5-qp-ZzV" firstAttribute="top" secondItem="LDB-KA-Hga" secondAttribute="bottom" constant="48" id="nYH-JA-E33"/>
+                            <constraint firstItem="EQ6-i5-V5u" firstAttribute="top" secondItem="aTD-Oo-IaR" secondAttribute="bottom" constant="56" id="snc-B8-SPd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H0I-91-d89" secondAttribute="trailing" constant="21" id="tHx-bu-gIU"/>
                         </constraints>
                     </view>
                     <connections>
