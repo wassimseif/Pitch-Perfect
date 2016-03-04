@@ -13,15 +13,18 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     var recordedAudio : RecordedAudio!
     var audioRecorder:AVAudioRecorder!
+    var paused : Bool = false
     
+    @IBOutlet weak var pauseButtonOutlet: UIButton!
     
     @IBOutlet weak var recordingLabelOutlet: UILabel!
     
     @IBAction func recordButtonPressed(sender: AnyObject) {
         
         recordingLabelOutlet.text = "Recording!"
-    
+        
         stopButtonOutlet.hidden = false
+        pauseButtonOutlet.hidden = false
         audioRecorder.record()
         
         
@@ -53,22 +56,23 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.delegate = self
         
         stopButtonOutlet.hidden = true
+        pauseButtonOutlet.hidden = true
         
         recordingLabelOutlet.text = "Tap to Record!"
-
+        
         
     }
-
+    
     @IBAction func stopButtonPressed(sender: AnyObject) {
         
         recordingLabelOutlet.text = "Tap to Record"
+        stopButtonOutlet.hidden = true
+        pauseButtonOutlet.hidden = true 
         audioRecorder.stop()
         let audioSesson = AVAudioSession.sharedInstance()
         
         do {
             try  audioSesson.setActive(false)
-            
-            
         }catch{
             
         }
@@ -84,20 +88,48 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
         }
         print("Audio Recorded Sucessfully")
         recordedAudio = RecordedAudio(title: recorder.url.lastPathComponent!, filePathIURL: recorder.url)
-
+        
         
         self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
     }
-
     
+    func setLabelText(){
+        if paused {
+            recordingLabelOutlet.text = "Paused"
+        }else{
+            recordingLabelOutlet.text = "Recording"
+        }
+    }
+    
+    @IBAction func pauseButtonPressed(sender: AnyObject) {
+        
+        // To be sure that a button invoked this action
+        if let buttonPressed = sender as? UIButton {
+            
+            if !paused {
+                audioRecorder.pause()
+                pauseButtonOutlet.setImage(UIImage(named: "resume_160_blue"), forState: UIControlState.Normal)
+                paused = !paused
+                setLabelText()
+                return
+            }
+            
+            audioRecorder.record()
+            pauseButtonOutlet.setImage(UIImage(named: "pause_160_blue"), forState: UIControlState.Normal)
+            paused = !paused
+            setLabelText()
+            
+            
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "stopRecording" {
             let playVC: PlayViewController = segue.destinationViewController as! PlayViewController
             
             let data = sender as! RecordedAudio
-            playVC.receivedAudio = data 
-
+            playVC.receivedAudio = data
+            
         }
     }
     

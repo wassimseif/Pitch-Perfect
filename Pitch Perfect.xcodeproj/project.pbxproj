@@ -24,6 +24,7 @@
 		1132DAFC1C84CB6F00AAE59A /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1132DAFB1C84CB6F00AAE59A /* Pitch_PerfectTests.swift */; };
 		1132DB071C84CB6F00AAE59A /* Pitch_PerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1132DB061C84CB6F00AAE59A /* Pitch_PerfectUITests.swift */; };
 		11AC89261C8989C4001479FA /* stop2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 11AC89251C8989C4001479FA /* stop2x-iphone.png */; };
+		11E6A3FC1C89FC2300E8D5EC /* resume_160_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 11E6A3FB1C89FC2300E8D5EC /* resume_160_blue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		1132DB061C84CB6F00AAE59A /* Pitch_PerfectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectUITests.swift; sourceTree = "<group>"; };
 		1132DB081C84CB6F00AAE59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11AC89251C8989C4001479FA /* stop2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop2x-iphone.png"; sourceTree = "<group>"; };
+		11E6A3FB1C89FC2300E8D5EC /* resume_160_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resume_160_blue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		111A412C1C85CBE200AE31CC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				11E6A3FB1C89FC2300E8D5EC /* resume_160_blue.png */,
 				111C3E431C874D81006A9BBB /* movie_quote.mp3 */,
 				111C3E3B1C86F6B1006A9BBB /* chipmunk2x-iphone.png */,
 				111C3E3C1C86F6B1006A9BBB /* darthvader2x-iphone.png */,
@@ -283,6 +286,7 @@
 				1132DAF11C84CB6F00AAE59A /* LaunchScreen.storyboard in Resources */,
 				1132DAEE1C84CB6F00AAE59A /* Assets.xcassets in Resources */,
 				111C3E411C86F6B1006A9BBB /* fast2x-iphone.png in Resources */,
+				11E6A3FC1C89FC2300E8D5EC /* resume_160_blue.png in Resources */,
 				1132DAEC1C84CB6F00AAE59A /* Main.storyboard in Resources */,
 				111C3E3A1C86F58B006A9BBB /* pause_160_blue.png in Resources */,
 				111C3E3F1C86F6B1006A9BBB /* chipmunk2x-iphone.png in Resources */,

@@ -50,7 +50,7 @@ class PlayViewController: UIViewController {
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         try! audioEngine.start()
-        c
+        
         audioPlayerNode.play()
     }
     
@@ -110,9 +110,9 @@ class PlayViewController: UIViewController {
         
         do {
             try
-                self.audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL)
+                self.audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.getFilePathURL())
             self.audioPlayer.enableRate = true
-            audioFile = try! AVAudioFile(forReading: receivedAudio.filePathURL)
+            audioFile = try! AVAudioFile(forReading: receivedAudio.getFilePathURL())
             
             
         }catch{}
