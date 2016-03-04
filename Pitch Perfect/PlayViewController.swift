@@ -21,14 +21,15 @@ class PlayViewController: UIViewController {
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
-    func setAudioPlayerRate(rate : Float){
+    func playAudioPlayerWithDifferentRate(rate : Float){
         
         audioPlayer.rate = rate
+        audioPlayer.play()
+
         
     }
     func stopAndResetAudioEngineAndPlayer(){
         audioPlayer.stop()
-        audioPlayer.currentTime = 0
         audioPlayer.currentTime = 0
         audioEngine.stop()
         audioEngine.reset()
@@ -49,14 +50,14 @@ class PlayViewController: UIViewController {
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         try! audioEngine.start()
-        
+        c
         audioPlayerNode.play()
     }
     
     
     
     @IBAction func stopButtonPressed(sender: AnyObject) {
-        audioPlayer.stop()
+        stopAndResetAudioEngineAndPlayer()
         
         
     }
@@ -67,21 +68,19 @@ class PlayViewController: UIViewController {
         stopButtonOutlet.hidden = false
         
         
-        setAudioPlayerRate(0.5)
-        audioPlayer.play()
-    }
+        playAudioPlayerWithDifferentRate(0.5)
+           }
     
     
     
     
     @IBAction func rabbitPlayAudio(sender: AnyObject) {
         stopAndResetAudioEngineAndPlayer()
+        
+        
         stopButtonOutlet.hidden = false
         
-        audioPlayer.currentTime = 0
-        
-        setAudioPlayerRate(2)
-        audioPlayer.play()
+       playAudioPlayerWithDifferentRate(2)
         
     }
     
