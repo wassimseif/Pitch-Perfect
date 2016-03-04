@@ -16,4 +16,20 @@ class RecordedAudio {
         self.title = title
         self.filePathURL = filePathIURL
     }
+    
+    func getTitle() -> String{
+        return self.title
+    }
+    
+    func getFilePathURL() -> NSURL {
+        return filePathURL ?? nil
+    }
+    
+    func setTitle(newTitle : String){
+        self.title = newTitle
+    }
+    
+    func setFilePathURL(newFilePathURL : NSURL){
+        self.filePathURL = newFilePathURL
+    }
 }
