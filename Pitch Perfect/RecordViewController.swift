@@ -83,11 +83,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
             return
         }
         print("Audio Recorded Sucessfully")
-        recordedAudio = RecordedAudio()
-        recordedAudio.filePathURL = recorder.url
-        recordedAudio.title = recorder.url.lastPathComponent
-        
-        
+        recordedAudio = RecordedAudio(title: recorder.url.lastPathComponent!, filePathIURL: recorder.url)
+
         
         self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
     }

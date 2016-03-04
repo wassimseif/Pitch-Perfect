@@ -21,10 +21,21 @@ class PlayViewController: UIViewController {
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
-    func playAudioWithVariablePitch(pitch: Float){
+    func setAudioPlayerRate(rate : Float){
+        
+        audioPlayer.rate = rate
+        
+    }
+    func stopAndResetAudioEngineAndPlayer(){
         audioPlayer.stop()
+        audioPlayer.currentTime = 0
+        audioPlayer.currentTime = 0
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    func playAudioWithVariablePitch(pitch: Float){
+        stopAndResetAudioEngineAndPlayer()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -46,16 +57,17 @@ class PlayViewController: UIViewController {
     
     @IBAction func stopButtonPressed(sender: AnyObject) {
         audioPlayer.stop()
-        audioPlayer.currentTime = 0
-
+        
+        
     }
     
     @IBAction func snailPlayAudio(sender: AnyObject) {
+        stopAndResetAudioEngineAndPlayer()
         
         stopButtonOutlet.hidden = false
-        audioPlayer.stop()
-        audioPlayer.currentTime = 0
-        audioPlayer.rate = 0.5
+        
+        
+        setAudioPlayerRate(0.5)
         audioPlayer.play()
     }
     
@@ -63,12 +75,12 @@ class PlayViewController: UIViewController {
     
     
     @IBAction func rabbitPlayAudio(sender: AnyObject) {
+        stopAndResetAudioEngineAndPlayer()
         stopButtonOutlet.hidden = false
-
-        audioPlayer.stop()
+        
         audioPlayer.currentTime = 0
         
-        audioPlayer.rate = 2.0
+        setAudioPlayerRate(2)
         audioPlayer.play()
         
     }
@@ -77,7 +89,7 @@ class PlayViewController: UIViewController {
     
     @IBAction func chipMunkPlayAudio(sender: AnyObject) {
         stopButtonOutlet.hidden = false
-
+        
         playAudioWithVariablePitch(1000)
         
     }
@@ -85,7 +97,7 @@ class PlayViewController: UIViewController {
     
     @IBAction func darthVaderPlayAudio(sender: AnyObject) {
         stopButtonOutlet.hidden = false
-
+        
         playAudioWithVariablePitch(-1000)
         
         

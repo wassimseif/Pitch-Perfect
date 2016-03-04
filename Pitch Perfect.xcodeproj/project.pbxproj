@@ -132,10 +132,10 @@
 		1132DAE51C84CB6F00AAE59A /* Pitch Perfect */ = {
 			isa = PBXGroup;
 			children = (
+				11AC89271C89AE66001479FA /* Models */,
 				111A412C1C85CBE200AE31CC /* Images */,
 				1132DAE61C84CB6F00AAE59A /* AppDelegate.swift */,
 				1132DAE81C84CB6F00AAE59A /* RecordViewController.swift */,
-				111D046A1C885679008E054C /* RecordedAudio.swift */,
 				111A412F1C85D48000AE31CC /* PlayViewController.swift */,
 				1132DAEA1C84CB6F00AAE59A /* Main.storyboard */,
 				1132DAED1C84CB6F00AAE59A /* Assets.xcassets */,
@@ -161,6 +161,14 @@
 				1132DB081C84CB6F00AAE59A /* Info.plist */,
 			);
 			path = "Pitch PerfectUITests";
+			sourceTree = "<group>";
+		};
+		11AC89271C89AE66001479FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				111D046A1C885679008E054C /* RecordedAudio.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
