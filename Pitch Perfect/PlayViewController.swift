@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class PlayViewController: UIViewController {
+class PlayViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     
@@ -25,9 +25,10 @@ class PlayViewController: UIViewController {
         
         audioPlayer.rate = rate
         audioPlayer.play()
-
+        
         
     }
+    
     func stopAndResetAudioEngineAndPlayer(){
         audioPlayer.stop()
         audioPlayer.currentTime = 0
@@ -69,7 +70,7 @@ class PlayViewController: UIViewController {
         
         
         playAudioPlayerWithDifferentRate(0.5)
-           }
+    }
     
     
     
@@ -80,7 +81,7 @@ class PlayViewController: UIViewController {
         
         stopButtonOutlet.hidden = false
         
-       playAudioPlayerWithDifferentRate(2)
+        playAudioPlayerWithDifferentRate(2)
         
     }
     
@@ -114,12 +115,18 @@ class PlayViewController: UIViewController {
             self.audioPlayer.enableRate = true
             audioFile = try! AVAudioFile(forReading: receivedAudio.getFilePathURL())
             
+            audioPlayer.delegate = self
             
-        }catch{}
-        
-        
-        
-        
+            
+        }catch{
+        }
+    }
+    
+    
+    
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        stopButtonOutlet.hidden = true
         
     }
     
